@@ -12,6 +12,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate'
 gem 'json', '~> 2.1'
 gem 'railties', '~> 5.2', '>= 5.2.2'
+gem 'jquery-countdown-rails', '~> 2.0', '>= 2.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -58,6 +59,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
+  gem 'factory_bot', '~> 4.11', '>= 4.11.1'
 end
 
 group :test do
@@ -66,6 +70,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
