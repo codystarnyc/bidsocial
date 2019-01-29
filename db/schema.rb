@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_200600) do
+ActiveRecord::Schema.define(version: 2019_01_29_201340) do
 
   create_table "auctions", force: :cascade do |t|
     t.integer "charity_id"
@@ -45,6 +45,28 @@ ActiveRecord::Schema.define(version: 2019_01_29_200600) do
     t.datetime "logo_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "auction_id"
+    t.integer "user_id"
+    t.string "name"
+    t.text "description"
+    t.integer "value"
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer "starting_bid"
+    t.integer "bid_increment"
+    t.boolean "approved"
+    t.boolean "declined"
+    t.string "name_down"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auction_id"], name: "index_items_on_auction_id"
+    t.index ["name_down"], name: "index_items_on_name_down"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
