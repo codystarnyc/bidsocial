@@ -3,7 +3,7 @@ class CreateWatchListItems < ActiveRecord::Migration[5.2]
     create_table :watch_list_items do |t|
       t.integer :item_id
       t.integer :user_id
-      t.boolean :wants_email
+      t.boolean :wants_email, default: false
 
       t.timestamps
     end

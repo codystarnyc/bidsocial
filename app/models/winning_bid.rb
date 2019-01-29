@@ -1,0 +1,2 @@
+class WinningBid < ApplicationRecord
+end
