@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_193209) do
+ActiveRecord::Schema.define(version: 2019_01_29_200600) do
 
   create_table "auctions", force: :cascade do |t|
     t.integer "charity_id"
@@ -21,6 +21,30 @@ ActiveRecord::Schema.define(version: 2019_01_29_193209) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["charity_id"], name: "index_auctions_on_charity_id"
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "user_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_bids_on_item_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
+  end
+
+  create_table "charities", force: :cascade do |t|
+    t.string "name"
+    t.text "email"
+    t.text "subhead"
+    t.string "url"
+    t.string "bg_color"
+    t.string "logo_file_name"
+    t.string "logo_content_type"
+    t.integer "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
