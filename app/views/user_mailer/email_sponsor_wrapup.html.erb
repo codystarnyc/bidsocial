@@ -1,0 +1,28 @@
+<h2><%= @current_auction.name %> Auction Donor/Bidder Match List:</h2>
+
+<p>Donors should contact winning bidder(s) via email to arrange delivery.</p>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th style="text-align: left">Item Name</th>
+      <th style="text-align: left">Winning Bid</th>
+      <th style="text-align: left">Donor Name</th>
+      <th style="text-align: left">Donor Email</th>
+      <th style="text-align: left">Bidder Name</th>
+      <th style="text-align: left">Bidder Email</th>
+    </tr>
+  </thead>
+   <tbody>
+     <% @current_auction.winning_bids.each do |winning_bid| %>
+     <tr>        
+       <td><%= winning_bid.item.name %></td>
+       <td>$<%= winning_bid.bid.amount %></td>
+       <td><%= winning_bid.item.user %></td>
+       <td><%= winning_bid.item.user.email %></td>
+       <td><%= winning_bid.bid.user %></td>
+       <td><%= winning_bid.bid.user.email %></td>
+     </tr>
+     <% end %>
+   </tbody>
+</table>
+

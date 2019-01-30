@@ -1,0 +1,40 @@
+<p><%= Date.today %></p>
+<p><%= @charity.name %></p>
+  
+<p>Dear <%= @user.fname %>,</p>
+<p>
+  Thank you for participating in our auction.
+  The auction was a great success! We were able to raise $<%= @funds_raised %>
+  to fund further charitable activities.<br>
+</p>
+<p>
+  A summary of your participation is below...
+</p>
+<h3>Auction Items Donated:</h3>
+<table style="width:80%">
+  <thead>
+    <tr>
+      <th style="text-align: left">Item Name</th>
+      <th style="text-align: left">Item Value</th>
+      <th style="text-align: left">Winning Bid</th>
+    </tr>
+  </thead>
+   <tbody>
+     <% @user.items.where(auction: @current_auction).each do |item| %>
+     <tr>        
+       <td><%= item.name %></td>
+       <td><%= item.value %></td>
+       <% winning_bid = WinningBid.find_by_item_id(item.id) %>
+       <td><%= winning_bid ? winning_bid.bid.amount : "Item Not Sold" %></td>
+     </tr>
+     <% end %>
+   </tbody>
+</table>
+<p>Once we receive payment confirmation, you will receive the winning bidder's 
+  email in order to contact them to arrange delivery of items.</p>
+<p>Thank you for your contribution. Please keep a copy of this document for tax purposes.</p>
+<p><b>*** No benefit was bestowed upon this donor in exchange for this contribution. ***</b></p>
+
+<p>We couldn't do this without your support. See you next time!</p>
+<p>Sincerely,</p>
+<p><%= @charity.name %></p>

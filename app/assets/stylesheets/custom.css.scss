@@ -1,0 +1,82 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.glyphicon-plus-sign, .glyphicon-minus-sign {
+  font-size: 150%;
+}
+
+.logo {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.jumbotron {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.number-input {
+  width: 30%;
+}
+
+.amount-field {
+  width: 65%;
+  display: inline;
+}
+
+.review-amount-field {
+  width: 20%;
+  display: inline;
+}
+
+.review-div {
+  margin-top: 15px;
+}
+
+.panel {
+  padding-bottom: 25px;
+}
+
+.countdown {
+  color: red;
+  text-align: right;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors { 
+  display: inline;
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+
+.active {
+  text-decoration: underline;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.color-box {   
+    float: left;
+    width: 50%;
+    height: 10px;
+    margin: 5px 0px 5px 0px;
+}
+
+.panel-link {
+  margin-top: 10px;
+}
+
+.panel-dashboard {
+  padding-left: 0;
+}
+

@@ -1,0 +1,29 @@
+<%= form_for([@item, @bid]) do |f| %>
+  <div class="row bid-fields">
+    <div class="col-md-4">
+      $ <%= f.number_field :amount,
+                           :value => @min_bid,
+                           min: @min_bid,
+                           class: "amount-field form-control" %> .00
+    </div>
+    <div class="col-md-3">
+      <%= f.submit "Place Bid", class: "form-control btn btn-danger" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p class="help-block">(Minimum bid: $<%= @min_bid %>)</p>
+    </div>
+    <div class="col-md-6">
+      <p class="help-block">
+        <% if @watch_list_item %>
+          <%= link_to 'Remove from watch list',
+                       watch_list_item_path(@watch_list_item), method: :delete %>
+        <% else %>
+          <%= link_to 'Add Item to watch list',
+                       item_watch_list_items_path(@item.id), method: :post %>
+        <% end %>      
+      </p>
+      <div><p><%= link_to "Back to Browse Items", root_path %></p></div>
+    </div>
+<% end %>

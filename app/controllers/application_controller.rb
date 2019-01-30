@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :username, :admin, :fName, :lName)} 
+      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:fname, :lname, :username, :email, :password,  :admin)} 
     #   devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password)} 
-      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :username, :admin, :fName, :lName)} 
+      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:fName, :lName, :username, :email, :password,  :admin)} 
+      
     end
     def after_sign_in_path_for user
         session[:forward_url] ? session.delete(:forward_url) : super
@@ -20,7 +21,7 @@ class ApplicationController < ActionController::Base
   
       def set_app_environment
         @charity = Charity.last
-        @current_auction = Auction.order(:finish).last
+        # @current_auction = Auction.order(:finish).last
       end
   
        def clear_item_search
