@@ -1,6 +1,6 @@
 require 'cgi'
 class AuctionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token, :only => [:wrapup]
+  skip_before_action :verify_authenticity_token, :only => [:wrapup]
   
   def new
     if @current_auction.nil? || auction_ended?

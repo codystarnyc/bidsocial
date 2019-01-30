@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :set_app_environment
 
+    
     protected
 
     def configure_permitted_parameters
@@ -21,6 +22,7 @@ class ApplicationController < ActionController::Base
       def set_app_environment
         @charity = Charity.last
         @current_auction = Auction.order(:finish).last
+        
       end
   
        def clear_item_search

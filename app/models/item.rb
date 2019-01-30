@@ -6,8 +6,8 @@ class Item < ActiveRecord::Base
   
     validates :auction, :user, :name, :description, presence: true
     validates :value, numericality: {only_integer: true, greater_than: 0, :message => " cannot be blank" }
-    validates :starting_bid, :bid_increment,
-    numericality: {only_integer: true, greater_than: 0}, if: "approval_in_process"
+    # validates :starting_bid, :bid_increment,
+    # numericality: {only_integer: true, greater_than: 0}, if: "approval_in_process"
   
     belongs_to :auction, inverse_of: :items
     belongs_to :user, inverse_of: :items
