@@ -3,8 +3,8 @@ class CreateAuctions < ActiveRecord::Migration[5.2]
     create_table :auctions do |t|
       t.integer :charity_id
       t.string :name
-      t.datetime :start_at
-      t.datetime :ends_at
+      t.datetime :start
+      t.datetime :finish
       t.string :time_zone_id
 
       t.timestamps null: false

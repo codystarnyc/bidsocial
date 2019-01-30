@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 2019_01_29_203351) do
   create_table "auctions", force: :cascade do |t|
     t.integer "charity_id"
     t.string "name"
-    t.datetime "start_at"
-    t.datetime "ends_at"
+    t.datetime "start"
+    t.datetime "finish"
     t.string "time_zone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
