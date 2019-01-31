@@ -23,7 +23,7 @@ class WatchListItemsController < ApplicationController
       else
         flash[:alert] = "#{item.name} could not be added to your watch list."
       end
-      redirect_to :back
+      redirect_back
     end
   
     def update
@@ -35,7 +35,7 @@ class WatchListItemsController < ApplicationController
       else
         msg = "You will not be notified regarding the item: "
       end
-      redirect_to :back, :notice => msg + item
+      redirect_back  :notice => msg + item
     end
   
     def destroy

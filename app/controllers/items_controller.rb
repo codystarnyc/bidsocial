@@ -135,7 +135,7 @@ def update
       params.require(:item).permit(:name,
                                    :description,
                                    :value,
-                                   :photo,
+                                   :picture,
                                    :starting_bid,
                                    :bid_increment,
                                    :approved)

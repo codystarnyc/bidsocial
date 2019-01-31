@@ -114,6 +114,7 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     image_magick (0.1.9)
+    imagemagick-identify (0.0.1)
     io-like (0.3.0)
     jamespath (0.5.1)
     jbuilder (2.8.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   faker (~> 1.9, >= 1.9.1)
   httparty (~> 0.16.3)
   image_magick (~> 0.1.9)
+  imagemagick-identify (~> 0.0.1)
   jbuilder (~> 2.5)
   jquery-countdown-rails (~> 2.0, >= 2.0.2)
   jquery-rails

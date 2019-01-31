@@ -1,6 +1,4 @@
 class CharitiesController < ApplicationController
-end
-class CharitiesController < ApplicationController
     before_action :require_admin, only: :show
     
     def new
@@ -49,7 +47,7 @@ class CharitiesController < ApplicationController
     private
     
     def charity_params
-      params.require(:charity).permit(:name, :subhead, :email, :url, :logo, :bg_color)
+      params.require(:charity).permit(:name, :subhead, :email, :url, :logo, :picture, :bg_color)
     end
   
   end
