@@ -9,11 +9,15 @@
 #                email: "auction@charity.com")
 
 t = Time.now
-Auction.create(name: "Charity Spring",
+Auction.create(name: "Bid Social",
                charity_id: 1, start: t,
                     finish: (t + 86400))
 
-
+                    User.create!(fname: "Patrick",
+                    lname: "Alcindor",
+                    email: "p.edward.alcindor@gmail.com",
+                    password: "test1234",
+                    password_confirmation: "test1234")
 
 70.times do |n|
  name = Faker::Commerce.product_name
