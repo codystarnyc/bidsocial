@@ -21,7 +21,7 @@
 /storage/*
 !/storage/.keep
 
-/config/secrets/bidsocial-pic.json
+/config/secrets/*
 
 /node_modules
 /yarn-error.log
