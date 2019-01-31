@@ -6,7 +6,7 @@ class AuctionsController < ApplicationController
     if @current_auction.nil? || auction_ended?
       @auction = Auction.new
     else
-      redirect_to :back, :alert => 'You may not create a new auction until the
+      redirect_back fallback_location: root_path, :alert => 'You may not create a new auction until the
                                     current auction has ended.'
     end
   end

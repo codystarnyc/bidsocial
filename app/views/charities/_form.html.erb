@@ -58,7 +58,7 @@
       <%= f.label :logo, "Current:" %>
     </div>
     <div class="col-md-2">
-      <%= image_tag @charity.logo.url(:tiny), class: "logo" %>
+           <%= image_tag(@charity.logo, width: 100) if @charity.logo.attached? %>
     </div>
     <div class="col-md-1">
       <%= f.label :logo, "Update:" %>

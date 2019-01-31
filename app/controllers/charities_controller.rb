@@ -1,6 +1,6 @@
 class CharitiesController < ApplicationController
     before_action :require_admin, only: :show
-    
+   
     def new
       if Charity.any?
         flash[:alert] = "Charity setup already completed"
@@ -22,6 +22,7 @@ class CharitiesController < ApplicationController
     
     # Charities#show corresponds to the sponsor dashboard.
     def show
+      # @charity = Charity.all
       @auctions = Auction.order(finish: :desc)
       unless @current_auction.nil?
         @pending_items_count = @current_auction.items.where(approved: false, declined: false).count
@@ -47,7 +48,7 @@ class CharitiesController < ApplicationController
     private
     
     def charity_params
-      params.require(:charity).permit(:name, :subhead, :email, :url, :logo, :picture, :bg_color)
+      params.require(:charity).permit(:name, :subhead, :email, :url, :logo, :bg_color)
     end
   
   end
