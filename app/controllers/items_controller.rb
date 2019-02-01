@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   def index
     if search_terms = (params[:search] || session[:search])
       if search_terms.blank?
-        redirect_to :back
+        redirect_to root_path
       else
         @items = Item.search(search_terms, @current_auction).includes(:bids) \
                      .paginate(page: params[:page], per_page: 20)
@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
     if(auction_upcoming? || current_user.admin?)
       @item = Item.find(params[:id])
     else
-      redirect_to :back, alert: "Changes not allowed once auction begins."
+      redirect_to root_path, alert: "Changes not allowed once auction begins."
     end
   end
 
