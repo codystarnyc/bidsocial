@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # must be valid paypal test acct, so business not skinnable for demo purposes
   def paypal_url(return_url, current_wbids) 
     values = { 
-      :business => 'p.edward.alcindor@gmail.com,
+      :business => 'patrick.edward.alcindor@Ggmail.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
