@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
   validates :fname, presence: true
   validates :lname, presence: true
   has_many :items, inverse_of: :user
@@ -17,7 +16,7 @@ class User < ActiveRecord::Base
   # must be valid paypal test acct, so business not skinnable for demo purposes
   def paypal_url(return_url, current_wbids) 
     values = { 
-      :business => 'mr_travis_smith-facilitator@hotmail.com',
+      :business => 'p.edward.alcindor@gmail.com,
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
